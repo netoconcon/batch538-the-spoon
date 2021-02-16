@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "restaurants", to: "restaurants#index"
 
   # MOSTRAR UM FORM PARA O USER CRIAR UM RESTAURANT
-  get "restaurants/new", to: "restaurants#new"
+  get "restaurants/new", to: "restaurants#new", as: :new_restaurant
 
   # MOSTRAR UM RESTAURANTE
   get "restaurants/:id", to: "restaurants#show", as: :restaurant
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post "restaurants", to: "restaurants#create"
 
   # MOSTRAR UM FORM PRO USER EDITAR O RESTAURANT
-  get "restaurants/:id/edit", to: "restaurants#edit", as: :edit
+  get "restaurants/:id/edit", to: "restaurants#edit", as: :edit_restaurant
 
   # ATUALIZAR O RESTAURANTE NO DB
   patch "restaurants/:id", to: "restaurants#update"
